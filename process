@@ -1,1 +1,24 @@
 1. Create database and create frontend and backend server
+
+2. connect backend server and install python3-pip and git. --> sudo yum install python3-pip -y    sudo yum install git  -y
+
+3. Edit the app.py file update the database details
+
+4. Install --> yum install mariadb105-server -y and connect database 
+   mysql -h database-1.ct2emgmy8qpw.ap-south-1.rds.amazonaws.com -u admin -p
+
+5. Run the test.sql script and check database created or not.
+
+6. go to backend and --> nohup python3 app.py > app.log 2>&1 &
+
+7. Go to frontend server and install nginx and git and clone repo.
+
+8. go to frontend folder edit the index.html and add public ip of backend only if your backend if public, if backend is private dont make any changes
+
+9. run command --> cp index.html /usr/share/nginx/html/index.html
+
+10. sudo vi /etc/nginx/conf.d/reverse-proxy.conf     paste the proxy.conf then run below command
+    #sudo nginx -t
+    #sudo systemctl reload nginx
+
+11. Access the application.
